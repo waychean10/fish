@@ -1,4 +1,5 @@
 export interface Button {
     title: string;
-    link: string;
+    route: string;
+    children?: Array<Button>;
 }
