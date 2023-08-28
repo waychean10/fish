@@ -7,9 +7,8 @@ interface DropdownProps {
     headerButton: Button;
 }
 
-const HeaderButton: React.FC<{props:DropdownProps}> = ({props}) => {
+const HeaderButton: React.FC<DropdownProps> = ({headerButton}) => {
     const [ display, setDisplay ] = useState('none');
-    const { headerButton } = props;
 
     function handleClick() {
         setDisplay(display === 'none' ? 'block' : 'none');
