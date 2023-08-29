@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 const DropdownButton: React.FC<{button:Button}> = ({button}) => {
 
     return (
-        <li>
+        <li className='py-2'>
             <Link to={button.route}>{ button.title }</Link>
         </li>
     )

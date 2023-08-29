@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { HeaderButton } from './HeaderButton';
 import { Button } from '../types/Button';
 
@@ -21,8 +20,11 @@ const Header: React.FC = () => {
 
     return (
         <header >
-            <nav className='p-8 max-h-80 bg-blue-500 relative'>
-                <HeaderButton headerButton={test} />
+            <nav className='max-h-50 bg-blue-500' role='navigation'>
+                <ul className='flex'>
+                    <HeaderButton headerButton={test} />
+                    <HeaderButton headerButton={test} />
+                </ul>
             </nav>
         </header>
     )

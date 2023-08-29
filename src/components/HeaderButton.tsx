@@ -8,33 +8,20 @@ interface DropdownProps {
 }
 
 const HeaderButton: React.FC<DropdownProps> = ({headerButton}) => {
-    const [isDropdownVisible, setIsDropdownVisible] = useState(false);
-
-    const handleMouseEnter = () => {
-    setIsDropdownVisible(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsDropdownVisible(false);
-  };
 
     return (
-        <ul>
-            <li>
-                <Link to={headerButton.route} 
-                    onMouseEnter={handleMouseEnter}
-                    onMouseLeave={handleMouseLeave}>
-                    { headerButton.title }
-                </Link>
-            </li>
-            {headerButton.children !== undefined && isDropdownVisible && 
-                <ul className='absolute'>
-                    {headerButton.children.map(option => (
-                        <DropdownButton key={option.title} button={option} />
-                    ))}
-                </ul>
-            }
-        </ul>
+        <li className='block group py-2 px-4'>
+            <Link to={headerButton.route}>
+                { headerButton.title }
+            </Link>
+            {headerButton.children !== undefined && 
+            <ul className='hidden group-hover:block pt-1 absolute'>
+                {headerButton.children.map(option => (
+                    <DropdownButton key={option.title} button={option} />
+                ))}
+            </ul>
+        }
+        </li>
     )
 }
 
