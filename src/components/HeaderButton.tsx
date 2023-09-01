@@ -11,11 +11,11 @@ const HeaderButton: React.FC<DropdownProps> = ({headerButton}) => {
 
     return (
         <li className='block group py-2 px-4'>
-            <Link to={headerButton.route}>
+            <Link className='relative top-0.5' to={headerButton.route}>
                 { headerButton.title }
             </Link>
             {headerButton.children !== undefined && 
-            <ul className='hidden group-hover:block pt-1 absolute'>
+            <ul className='hidden group-hover:block pt-4 absolute'>
                 {headerButton.children.map(option => (
                     <DropdownButton key={option.title} button={option} />
                 ))}
